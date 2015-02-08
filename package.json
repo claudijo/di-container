@@ -1,0 +1,36 @@
+{
+  "name": "di-container",
+  "version": "1.0.0",
+  "description": "Dependency injection container for Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --check-leaks --reporter spec --bail",
+    "test-cov": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/claudijo/di-container"
+  },
+  "keywords": [
+    "di",
+    "dependency",
+    "injection",
+    "container"
+  ],
+  "author": "Claudijo Borovic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/claudijo/di-container/issues"
+  },
+  "homepage": "https://github.com/claudijo/di-container",
+  "dependencies": {
+    "args-list": "^0.3.3"
+  },
+  "devDependencies": {
+    "istanbul": "^0.3.5",
+    "mocha": "^2.1.0"
+  },
+  "files": [
+    "LICENSE",
+    "index.js"
+}
