@@ -19,7 +19,7 @@ DiContainer.prototype = {
 
     if (!this.dependencies[name]) {
       factory = this.factories[name];
-      this.dependencies[name] = factory && this.inject(factory);
+      this.dependencies[name] = factory && this._inject(factory);
     }
 
     if (!this.dependencies[name]) {
@@ -29,7 +29,7 @@ DiContainer.prototype = {
     return this.dependencies[name];
   },
 
-  inject: function(factory) {
+  _inject: function(factory) {
     var args;
     var dependencies;
 
