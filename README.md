@@ -21,7 +21,7 @@ var DiContainer = require('di-container');
 var diContainer = new DiContainer();
 
 diContainer.register('name', 'alice');
-diContainer.factory('person', require('.lib/person-factory'));
+diContainer.factory('person', require('./lib/person-factory'));
 
 var person = diContainer.get('person');
 // person.name == 'alice'
