@@ -8,10 +8,14 @@ var DiContainer = function() {
 DiContainer.prototype = {
   factory: function(name, factory) {
     this.factories[name] = factory;
+
+    return this;
   },
 
   register: function(name, dependency) {
     this.dependencies[name] = dependency;
+
+    return this;
   },
 
   get: function(name) {

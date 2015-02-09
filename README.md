@@ -15,6 +15,8 @@ made popular by AngularJS). Alternatively, a module can be defined as an array
 of dependency names followed by the factory function. The latter form is more
 resilient to code minifcation and name mangling.
 
+The method chaining pattern is supported.
+
 ## Example
 
 ```js
@@ -32,21 +34,33 @@ module.exports = ['type', function(a) {
   };
 }];
 
+/* lib/vehicle-factory.js */
+module.exports = function(speed) {
+  return {
+    speed: speed
+  };
+};
+
 /* index.js */
 var DiContainer = require('di-container');
 var di = new DiContainer();
 
+// Using a module that returns a factory with listed named dependencies.
 di.register('name', 'alice');
 di.factory('person', require('./lib/person-factory'));
 
-var person = di.get('person');
-// person.name == 'alice'
+var person = di.get('person'); // person.name returns 'alice'
 
+// Using a module that defines an array of dependency names followed by the
+// factory function
 di.register('type', 'dog');
 di.factory('animal', require('./lib/animal-factory'));
 
-var animal = di.get('animal');
-// animal.type == 'dog'
+var animal = di.get('animal'); // animal.type returns 'dog'
+
+// Method chaining
+di.factory('vehicle', require('./lib/vehicle-factory')).register('speed', 'fast');
+var vehicle = di.get('vehicle'); // vehicle.speed returns 'fast')
 ```
 
 # License
