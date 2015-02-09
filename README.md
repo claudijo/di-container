@@ -23,7 +23,7 @@ resilient to code minifcation and name mangling.
 
 The method chaining pattern is supported.
 
-## Example
+### Example
 
 ```js
 /* lib/person-factory.js */
