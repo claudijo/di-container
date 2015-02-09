@@ -17,6 +17,12 @@ resilient to code minifcation and name mangling.
 
 The method chaining pattern is supported.
 
+### Browser support
+
+This library has not been tested in browsers, but it should be possible to use
+as long as the browser support (or has a polyfills for) `Array.prototype.map()`
+and `Array.isArray`.
+
 ## Example
 
 ```js
