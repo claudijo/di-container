@@ -9,7 +9,7 @@ Basic Dependency Injection (DI) container for Node.js inspired by code examples 
 ## Usage
 
 Factory functions can simply list their dependencies in the argument list (as
-made popular by AngularJS). Alternatively an module can be defined as an array
+made popular by AngularJS). Alternatively a module can be defined as an array
 of dependency names followed by the factory function. The latter form is more
 resilient to code minifcation and name mangling.
 
@@ -45,8 +45,6 @@ diContainer.factory('animal', require('./lib/animal-factory'));
 
 var animal = diContainer.get('animal');
 // animal.type == 'dog'
-
-var ani
 ```
 
 # License
