@@ -20,8 +20,8 @@ The method chaining pattern is supported.
 ### Browser support
 
 This library has not been tested in browsers, but it should be possible to use
-as long as the browser support (or has a polyfills for) `Array.prototype.map()`
-and `Array.isArray`.
+with [Browserify](http://browserify.org/) and as long as the browser support
+(or has a polyfills for) `Array.prototype.map()` and `Array.isArray`.
 
 ## Example
 
