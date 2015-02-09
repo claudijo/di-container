@@ -4,6 +4,12 @@ Basic Dependency Injection (DI) container for Node.js inspired by code examples
 found in the book [Node.js Design Patterns]
 (https://www.packtpub.com/web-development/nodejs-design-patterns).
 
+### Browser support
+
+This library has not been tested in browsers, but it should be possible to use
+with [Browserify](http://browserify.org/) and as long as the browser support
+(or has a polyfills for) `Array.prototype.map()` and `Array.isArray`.
+
 ## Installation
 
 `$ npm install di-container`
@@ -16,12 +22,6 @@ of dependency names followed by the factory function. The latter form is more
 resilient to code minifcation and name mangling.
 
 The method chaining pattern is supported.
-
-### Browser support
-
-This library has not been tested in browsers, but it should be possible to use
-with [Browserify](http://browserify.org/) and as long as the browser support
-(or has a polyfills for) `Array.prototype.map()` and `Array.isArray`.
 
 ## Example
 
