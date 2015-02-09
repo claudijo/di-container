@@ -23,14 +23,14 @@ module.exports = function(name) {
   return {
     name: name
   };
-}
+};
 
 /* lib/animal-factory.js */
 module.exports = ['type', function(a) {
   return {
     type: a
   };
-}]
+}];
 
 /* index.js */
 var DiContainer = require('di-container');
