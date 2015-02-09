@@ -1,6 +1,8 @@
 # di-container
 
-Basic Dependency Injection (DI) container for Node.js inspired by code examples found in the book [Node.js Design Patterns](https://www.packtpub.com/web-development/nodejs-design-patterns).
+Basic Dependency Injection (DI) container for Node.js inspired by code examples
+found in the book [Node.js Design Patterns]
+(https://www.packtpub.com/web-development/nodejs-design-patterns).
 
 ## Installation
 
@@ -8,8 +10,8 @@ Basic Dependency Injection (DI) container for Node.js inspired by code examples 
 
 ## Usage
 
-Factory functions can simply list their dependencies in the argument list (as
-made popular by AngularJS). Alternatively a module can be defined as an array
+Factory functions can simply list their named dependencies as arguments (as
+made popular by AngularJS). Alternatively, a module can be defined as an array
 of dependency names followed by the factory function. The latter form is more
 resilient to code minifcation and name mangling.
 
@@ -32,18 +34,18 @@ module.exports = ['type', function(a) {
 
 /* index.js */
 var DiContainer = require('di-container');
-var diContainer = new DiContainer();
+var di = new DiContainer();
 
-diContainer.register('name', 'alice');
-diContainer.factory('person', require('./lib/person-factory'));
+di.register('name', 'alice');
+di.factory('person', require('./lib/person-factory'));
 
-var person = diContainer.get('person');
+var person = di.get('person');
 // person.name == 'alice'
 
-diContainer.register('type', 'dog');
-diContainer.factory('animal', require('./lib/animal-factory'));
+di.register('type', 'dog');
+di.factory('animal', require('./lib/animal-factory'));
 
-var animal = diContainer.get('animal');
+var animal = di.get('animal');
 // animal.type == 'dog'
 ```
 
