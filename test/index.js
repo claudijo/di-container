@@ -86,4 +86,9 @@ describe('Dependency Injector container', function() {
 
     assert(di.get('createPerson').name === 'alice');
   });
+
+  it('should be possible to instantiate without using the new keyword', function() {
+    var newlessDi = DiContainer();
+    assert(newlessDi instanceof DiContainer);
+  })
 });

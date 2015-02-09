@@ -1,6 +1,10 @@
 var argsList = require('args-list');
 
 var DiContainer = function() {
+  if (!(this instanceof DiContainer)) {
+    return new DiContainer();
+  }
+
   this.dependencies = {};
   this.factories = {};
 };
