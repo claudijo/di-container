@@ -87,21 +87,25 @@ assert(vehicle.manufacturer === 'volvo');
 ## API
 
 Register named dependency.
+
 `di.register(<name>, <dependency>)`
 
 Register named factory function. The argument names in the factory defines its
 dependencies.
+
 `di.factory(<name>, <factory>)`
 
 Alternatively register named factory function in the form of an array with named
 dependencies followed by the factory function. This syntax should be used if
 local variables are mangled during a code minification step.
+
 `di.factory(<name>, <array with dependency names followed by factory>)`
 
 Returns instance from specified factory function or dependency. Factories'
 dependencies will be wired and resolved at runtime, which means that the
 registering of dependencies and factories do not have to follow a specific
 order prior to calling this method.
+
 `di.get(<name>)`
 
 # License
