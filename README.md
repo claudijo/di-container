@@ -43,11 +43,11 @@ module.exports = ['type', 'legCount', function(a, b) {
 }];
 
 /* lib/vehicle-factory.js */
-module.exports = function(speed, manufacturer, owner) {
+module.exports = function(speed, manufacturer, person) {
   return {
     speed: speed,
     manufacturer: manufacturer,
-    owner: owner
+    owner: person
   };
 };
 
