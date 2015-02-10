@@ -43,10 +43,11 @@ module.exports = ['type', 'legCount', function(a, b) {
 }];
 
 /* lib/vehicle-factory.js */
-module.exports = function(speed, manufacturer) {
+module.exports = function(speed, manufacturer, owner) {
   return {
     speed: speed,
-    manufacturer: manufacturer
+    manufacturer: manufacturer,
+    owner: owner
   };
 };
 
@@ -74,7 +75,7 @@ var animal = di.get('animal');
 assert(animal.type === 'dog');
 assert(animal.legCount === 4);
 
-// Method chaining
+// Method chaining and using other factories as dependencies
 di.factory('vehicle', require('./lib/vehicle-factory'))
   .register('speed', 'fast')
   .register('manufacturer', 'volvo');
@@ -82,6 +83,7 @@ di.factory('vehicle', require('./lib/vehicle-factory'))
 var vehicle = di.get('vehicle');
 assert(vehicle.speed === 'fast');
 assert(vehicle.manufacturer === 'volvo');
+assert(vehicle.owner.name === 'alice');
 ```
 
 ## API
