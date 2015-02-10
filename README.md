@@ -7,8 +7,8 @@ found in the book [Node.js Design Patterns]
 ### Browser support
 
 This library has not been tested in browsers, but it should be possible to use
-with [Browserify](http://browserify.org/) and as long as the browser support
-(or has a polyfills for) `Array.prototype.map()` and `Array.isArray`.
+with [Browserify](http://browserify.org/) and as long as the browser supports
+(or has a polyfills for) `Array.prototype.map()` and `Array.isArray()`.
 
 ## Installation
 
