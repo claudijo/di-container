@@ -27,23 +27,26 @@ The method chaining pattern is supported.
 
 ```js
 /* lib/person-factory.js */
-module.exports = function(name) {
+module.exports = function(name, age) {
   return {
-    name: name
+    name: name,
+    age: age
   };
 };
 
 /* lib/animal-factory.js */
-module.exports = ['type', function(a) {
+module.exports = ['type', 'legCount', function(a, b) {
   return {
-    type: a
+    type: a,
+    legCount: b
   };
 }];
 
 /* lib/vehicle-factory.js */
-module.exports = function(speed) {
+module.exports = function(speed, manufacturer) {
   return {
-    speed: speed
+    speed: speed,
+    manufacturer: manufacturer
   };
 };
 
@@ -54,24 +57,31 @@ var di = new DiContainer();
 
 // Using a module that returns a factory with listed named dependencies.
 di.register('name', 'alice');
+di.register('age', 30);
 di.factory('person', require('./lib/person-factory'));
 
 var person = di.get('person');
 assert(person.name === 'alice');
+assert(person.age === 30);
 
 // Using a module that defines an array of dependency names followed by the
 // factory function
 di.register('type', 'dog');
+di.register('legCount', 4);
 di.factory('animal', require('./lib/animal-factory'));
 
 var animal = di.get('animal');
 assert(animal.type === 'dog');
+assert(animal.legCount === 4);
 
 // Method chaining
-di.factory('vehicle', require('./lib/vehicle-factory')).register('speed', 'fast');
+di.factory('vehicle', require('./lib/vehicle-factory'))
+  .register('speed', 'fast')
+  .register('manufacturer', 'volvo');
 
 var vehicle = di.get('vehicle');
 assert(vehicle.speed === 'fast');
+assert(vehicle.manufacturer === 'volvo');
 ```
 
 ## API
