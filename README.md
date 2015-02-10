@@ -90,7 +90,7 @@ Register named dependency.
 
 `di.register(<name>, <dependency>)`
 
-Register named factory function. The argument names in the factory defines its
+Register named factory function. The argument name in the factory defines its
 dependencies.
 
 `di.factory(<name>, <factory>)`
