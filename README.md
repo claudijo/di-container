@@ -110,6 +110,16 @@ order prior to calling this method.
 
 `di.get(<name>)`
 
+## Test
+
+Run unit tests;
+
+`$ npm test`
+
+Create test coverage report:
+
+`$ npm run-script test-cov`
+
 # License
 
 [MIT](LICENSE)
